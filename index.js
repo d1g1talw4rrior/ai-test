@@ -6,7 +6,6 @@ app.use(express.json());
 
 // Yksinkertainen API reitti
 app.post("/chat", async (req, res) => {
-  const OPENAI_KEY = process.env.OPENAI_KEY;
   const userMsg = req.body.message;
 
   try {
