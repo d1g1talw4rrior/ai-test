@@ -1,2 +1,2 @@
 # ai-test
-For fun testing
+testing if app works with AI API callback 
