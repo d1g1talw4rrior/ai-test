@@ -4,7 +4,12 @@ const app = express();
 
 app.use(express.json());
 
-// Yksinkertainen API reitti
+// Etusivu
+app.get("/", (req, res) => {
+  res.send("Tekoäly-API toimii! Käytä POST /chat päästäksesi juttelemaan.");
+});
+
+// Chat endpoint
 app.post("/chat", async (req, res) => {
   const userMsg = req.body.message;
 
@@ -26,6 +31,6 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-// Render kuuntelee porttia ympäristömuuttujasta
+// Render tarvitsee tämän
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
